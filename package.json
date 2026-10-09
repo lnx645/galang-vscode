@@ -1,0 +1,46 @@
+{
+  "name": "galang",
+  "displayName": "GaLang",
+  "description": "VS Code extension for GaLang language support",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages"],
+  "scripts": {
+    "lint": "echo 'no lint'",
+    "test": "echo 'no test'"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "galang.compile",
+        "title": "GaLang: Compile"
+      },
+      {
+        "command": "galang.run",
+        "title": "GaLang: Run"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "GaLang",
+      "properties": {
+        "galang.interpreterPath": {
+          "type": "string",
+          "default": "gar",
+          "description": "Path to the gar interpreter binary"
+        }
+      }
+    },
+    "grammars": [
+      {
+        "language": "Galang",
+        "scopeName": "source.galang",
+        "extensions": [".ga"],
+        "path": "syntaxes/galang.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {}
+}

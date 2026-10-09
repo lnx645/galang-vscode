@@ -1,0 +1,58 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vscode/master/schemas/tmLanguage.json",
+    "name": "GaLang",
+    "fileTypes": ["ga"],
+    "commentTokens": [
+        {
+            "lineComment": "//",
+            "blockComment": ["/*", "*/"]
+        }
+    ],
+    "repository": {
+        "comment": {
+            "begin": "//",
+            "end": "$",
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.galang",
+                    "match": "//.*"
+                }
+            ]
+        },
+        "string": {
+            "name": "string.quoted.double.galang",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.galang",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "keyword": {
+            "name": "keyword.control.galang",
+            "patterns": [
+                {
+                    "match": "\\b(use|print|try|catch|if|else|for|while|return)\\b"
+                }
+            ]
+        },
+        "function": {
+            "name": "support.function.galang",
+            "patterns": [
+                {
+                    "match": "\\b(add|join|boom|twice|stash|unstash|calls|keys|from|to|subject|send|send_html|auth|connect|close)\\b"
+                }
+            ]
+        },
+        "number": {
+            "name": "constant.numeric.galang",
+            "patterns": [
+                {
+                    "match": "\\b([0-9]+\\.?[0-9]*|0x[0-9a-fA-F]+)\\b"
+                }
+            ]
+        }
+    }
+}
